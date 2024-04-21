@@ -1,4 +1,4 @@
-import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Nav, NavDropdown, Navbar } from "react-bootstrap";
 import {
   BrightnessHighFill,
   Cart,
@@ -7,7 +7,7 @@ import {
   PersonExclamation,
   Search,
 } from "react-bootstrap-icons";
-import "./cartGrid.css";
+
 import { Link } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
 
@@ -30,10 +30,10 @@ export default function NavBar() {
   }, [theme]);
 
   const themeStyle = useMemo(() => {
-    if (theme == "light") {
+    if (theme === "light") {
       return <BrightnessHighFill />;
     }
-    if (theme == "dark") {
+    if (theme === "dark") {
       return <MoonStarsFill />;
     }
   }, [theme]);

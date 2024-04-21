@@ -1,11 +1,11 @@
 import Container from "react-bootstrap/Container";
-import MainWallpaper from "../assets/MainWallpaper.png";
+import MainWallpaper from "../../assets/MainWallpaper.png";
 import "./cartGrid.css";
 import "./cartPageStyles.css";
-import NavBar from "./NavBar.js";
+import NavBar from "../Common/NavBar.js";
 import { useMemo } from "react";
 import { BoxSeam, CheckCircle, Headset, Trash3Fill, Trophy } from "react-bootstrap-icons";
-import Footer from "./Footer.js";
+import Footer from "../Common/Footer.js";
 
 export default function Cart({ products, removeItem }) {
 
@@ -33,6 +33,7 @@ export default function Cart({ products, removeItem }) {
 
         <div className="MainWallpaper">
           <img
+            alt='MainWallpaper'
             src={MainWallpaper}
             style={{ width: "100%", height: "100%", filter: "blur(6px)" }}
           />
@@ -61,6 +62,7 @@ export default function Cart({ products, removeItem }) {
                     <tr align="center" key={idx}>
                       <td>
                         <img
+                          alt='Product'
                           style={{
                             width: "100px",
                             height: "100px",

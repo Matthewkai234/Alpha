@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import Engine from "./assets/Engine.png";
-import Cart from "./components/Cart";
-import Home from "./components/Home"
 import { Route, Routes } from "react-router-dom";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
   const [products, setProducts] = useState ([ 
@@ -25,9 +24,7 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route index element={<Home/>}/>
-        <Route path='/home' element={<Home/>}/>
+      <Routes> 
         <Route path="/cart" element={<Cart products={products} removeItem={removeItem} />} />
       </Routes>
     </>
