@@ -41,85 +41,123 @@ export default function NavBar() {
   return (
     <>
       <Navbar className="navbar" expand="lg">
-        
-          <Navbar.Brand href="#company-name">PaliParts</Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse>
-            <Nav className="mx-auto">
-              <Nav.Link as={Link} to="/" className="item-in-nav" style={{marginRight: '45px', fontSize:'20px', fontFamily:'Cambria', fontWeight:'bold'}}>
-                Home
-              </Nav.Link>
-              <Nav.Link as={Link} to="/shop" className="item-in-nav" style={{marginRight: '45px', fontSize:'20px', fontFamily:'Cambria', fontWeight:'bold'}}>
-                Shop
-              </Nav.Link>
-              <Nav.Link as={Link} to="/about" className="item-in-nav" style={{marginRight: '45px', fontSize:'20px', fontFamily:'Cambria', fontWeight:'bold'}}>
-                About
-              </Nav.Link>
-              <Nav.Link as={Link} to="/contact" className="item-in-nav" style={{ fontSize:'20px', fontFamily:'Cambria', fontWeight:'bold'}}>
-                Contact
-              </Nav.Link>
-            </Nav>
-
-            <Nav
+        <Navbar.Brand href="#company-name">PaliParts</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav className="mx-auto">
+            <Nav.Link
+              as={Link}
+              to="/"
+              className="item-in-nav"
               style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
+                marginRight: "45px",
+                fontSize: "20px",
+                fontFamily: "Cambria",
+                fontWeight: "bold",
               }}
             >
-              <button
-                type="button"
-                style={{
-                  marginRight: '20px',
-                  background: "none",
-                  border: "none",
-                }}
-              >
-                <PersonExclamation style={{width: '30px', height:'30px'}} />
-              </button>
-              <button
-                type="button"
-                style={{
-                  marginRight: '20px',
-                  background: "none",
-                  border: "none",
-                }}
-              >
-                <Cart style={{width: '25px', height:'25px'}} />
-              </button>
-              <button
-                type="button"
-                style={{
-                  marginRight: '20px',
-                  background: "none",
-                  border: "none",
-                }}
-              >
-                <Heart style={{width: '25px', height:'25px'}} />
-              </button>
-              <button
-                type="button"
-                style={{
-                  marginRight: '20px',
-                  background: "none",
-                  border: "none",
-                }}
-              >
-                <Search style={{width: '25px', height:'25px'}} />
-              </button>
+              Home
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/shop"
+              className="item-in-nav"
+              style={{
+                marginRight: "45px",
+                fontSize: "20px",
+                fontFamily: "Cambria",
+                fontWeight: "bold",
+              }}
+            >
+              Shop
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/about"
+              className="item-in-nav"
+              style={{
+                marginRight: "45px",
+                fontSize: "20px",
+                fontFamily: "Cambria",
+                fontWeight: "bold",
+              }}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              className="item-in-nav"
+              style={{
+                fontSize: "20px",
+                fontFamily: "Cambria",
+                fontWeight: "bold",
+              }}
+            >
+              Contact
+            </Nav.Link>
+          </Nav>
 
-              <NavDropdown title={themeStyle} >
-                <NavDropdown.Item onClick={() => setTheme("dark")}>
-                  <MoonStarsFill />
-                  Dark
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => setTheme("light")}>
-                  <BrightnessHighFill />
-                  Light
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              type="button"
+              style={{
+                marginRight: "20px",
+                background: "none",
+                border: "none",
+              }}
+            >
+              <PersonExclamation style={{ width: "30px", height: "30px" }} />
+            </button>
+            <button
+              type="button"
+              style={{
+                marginRight: "20px",
+                background: "none",
+                border: "none",
+              }}
+            >
+              <Cart style={{ width: "25px", height: "25px" }} />
+            </button>
+            <button
+              type="button"
+              style={{
+                marginRight: "20px",
+                background: "none",
+                border: "none",
+              }}
+            >
+              <Heart style={{ width: "25px", height: "25px" }} />
+            </button>
+            <button
+              type="button"
+              style={{
+                marginRight: "20px",
+                background: "none",
+                border: "none",
+              }}
+            >
+              <Search style={{ width: "25px", height: "25px" }} />
+            </button>
+
+            <NavDropdown title={themeStyle}>
+              <NavDropdown.Item onClick={() => setTheme("dark")}>
+                <MoonStarsFill />
+                Dark
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setTheme("light")}>
+                <BrightnessHighFill />
+                Light
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </>
   );
