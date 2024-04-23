@@ -7,7 +7,6 @@ This page was designed by:
 1. Bootstrap 5.3.3
 ```
 npm i bootstrap@5.3.3
-
 ```
 2. react-bootstrap 2.10.2
 ```
