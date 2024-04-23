@@ -1,0 +1,21 @@
+
+/* This file doesn't have any use at the moment */
+
+
+import "./Styling/ImagesBoxStyle.css";
+import FooterImages from "./Imgs/FooterImages.png";
+
+function ImagesBox() {
+  return (
+    <>
+      <img
+        loading="lazy"
+        src={FooterImages}
+        className="img"
+        alt="misc"
+      />
+    </>
+  );
+}
+
+export default ImagesBox;

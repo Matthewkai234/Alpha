@@ -1,0 +1,179 @@
+/* HeadBanner Section */
+.head-banner-section {
+    position: relative;
+    display: flex;
+    /* min-height: 730px; */
+    max-height: 10%;
+    align-items: start;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.96px;
+    padding: 80px 80px 80px 32px;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 991px) {
+    .head-banner-section {
+      padding: 0 20px;
+    }
+  }
+  
+  /* HeadBanner Background */
+  .head-banner-background {
+    background-color: red;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* HeadBanner Content */
+  .head-banner-content {
+    position: relative;
+  }
+  
+  /* HeadBanner Title */
+  .head-banner-title {
+    color: #111010;
+    letter-spacing: 1.88px;
+    margin-top: 0px;
+    font: 800 30px Lato, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .head-banner-title {
+      max-width: 100%;
+      margin-top: 40px;
+      font-size: 24px;
+    }
+  }
+  
+  /* HeadBanner Description */
+  .head-banner-description {
+    color: #686868;
+    font-family: Lato, sans-serif;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 991px) {
+    .head-banner-description {
+      max-width: 100%;
+      font-size: 18px;
+    }
+  }
+  
+  /* HeadBanner Button Container */
+  .head-banner-button-container {
+    display: flex;
+    margin-top: 44px;
+    max-width: 400px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 991px) {
+    .head-banner-button-container {
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+  }
+  
+  /* HeadBanner Button */
+  .head-banner-button {
+    font-family: Lato, sans-serif;
+    border-radius: 20px;
+    justify-content: center;
+    color: #fff;
+    background-color: #13120e;
+    border: none;
+    align-self: start;
+    align-items: start;
+    padding: 21px 44px;
+
+    cursor: pointer;
+  }
+  
+  .head-banner-button.secondary {
+    /* padding: 23px 33px; */
+    width: 223px;
+    height: 64px;
+
+    text-align: center;
+    text-wrap: nowrap;
+    font-size: 25px;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 5px solid rgba(104, 104, 104, 1);
+
+    transition: background-color 0.3s ease, transform 0.5s ease, border-color 2.0s ease-in;
+
+    animation: 
+        borderAnimationStart 1s linear infinite alternate,
+        borderAnimationEnd 1s linear infinite alternate;
+  }
+  .head-banner-button.secondary:hover{
+    background-color: black;
+    color: #FFC208;
+    transform: scale(1.05);
+    border-color: #FFC208;
+  }
+  .head-banner-button.secondary:active{
+    transform: translateY(4px);
+  }
+
+  .head-banner-button.primary {
+    /* padding: 21px 44px; */
+    width: 223px;
+    height: 64px;
+
+    text-align: center;
+    text-wrap: nowrap;
+    font-size: 25px;
+
+    display: inline-flex;
+    align-items: center;
+
+    transition: background-color 0.3s ease, transform 0.5s ease;
+  }
+  
+  .head-banner-button.primary:hover {
+    background-color: #FFC208;
+    color: black;
+    transform: scale(1.05);
+  }
+
+  .head-banner-button.primary:active {
+    transform: translateY(4px); /* Move the button down slightly on click */
+  }
+
+  @media (max-width: 991px) {
+    .head-banner-button {
+        padding: 0 20px;
+
+        width: 150px;
+        height: 20px;
+    }
+  }
+  
+  @keyframes borderAnimationStart {
+    0% {
+      border-color: #686868; /* Initial color */
+    }
+    100% {
+      border-color: #FFC208; /* Final color */
+    }
+  }
+  @keyframes borderAnimationEnd {
+    0% {
+      border-color: #FFC208; /* Initial color */    
+    }
+    100% {
+      border-color: #686868; /* Final color */      
+    }
+  }

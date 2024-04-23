@@ -1,0 +1,20 @@
+.SectionHeaderText {
+    color: #040404;
+    font-feature-settings: "clig" off, "liga" off;
+    max-width: 271px;
+    font: 700 40px/50% Lato, sans-serif;
+    text-align: left;
+
+    margin-left: 4rem;
+    margin-top: 50px;
+  }
+  
+  /* Media query for screens smaller than 768px */
+  @media (max-width: 767px) {
+    .SectionHeaderText {
+      font-size: 26px; /* Adjust font size for smaller screens */
+      max-width: 100%; /* Allow the text to take full width */
+      text-align: left; /* Center the text */
+    }
+  }
+  
