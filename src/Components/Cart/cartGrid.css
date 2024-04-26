@@ -71,7 +71,8 @@
   grid-area: footer;
   display: grid;
   justify-content: center;
-  background-color: #fbf1e7;
+  background-color: #ffffff;
+   border-top:1px solid #D4D4D4;
 }
 
 @media screen and (max-width: 690px) {
