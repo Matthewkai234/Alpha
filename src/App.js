@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Engine from "./assets/Engine.png";
+import { Route, Routes } from "react-router-dom";
+import Cart from "./Components/Cart/Cart";
+import ContactUs from "./Components/ContactUs/ContactUs";
 
 function App() {
+  const [products, setProducts] = useState([
+    {
+      image: Engine,
+      name: "Product1",
+      price: 69,
+      quantity: 2,
+    },
+  ]);
+
+  function removeItem(idx) {
+    setProducts((previous) => {
+      const newProducts = [...previous];
+      newProducts.splice(idx, 1);
+      return newProducts;
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/cart"
+          element={<Cart products={products} removeItem={removeItem} />}
+        />
+
+        <Route path="/contact" element={<ContactUs />} />
+      </Routes>
+    </>
   );
 }
 

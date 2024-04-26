@@ -1,0 +1,139 @@
+.sliding-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  place-items: center;
+
+  grid-template-areas: "sheetdiv1 sheetdiv2 sheetdiv3 sheetdiv4";
+}
+
+@media screen and (max-width: 690px) {
+  .sliding-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    place-items: center;
+
+    grid-template-areas: "sheetdiv1" "sheetdiv2" "sheetdiv3" "sheetdiv4";
+  }
+}
+
+.sliding-box-div-1 {
+  display: grid;
+  grid-area: sheetdiv1;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "sheetdiv1logo sheetdiv1headerdescription"
+    "sheetdiv1logo sheetdiv1headerdescription";
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.sliding-box-div-1-header-description {
+  display: grid;
+  grid-area: sheetdiv1headerdescription;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.sliding-box-div-1-logo {
+  display: grid;
+  grid-area: sheetdiv1logo;
+  align-self: center;
+  height: 50px;
+  width: 50px;
+}
+
+.sliding-box-div-2 {
+  display: grid;
+  grid-area: sheetdiv2;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "sheetdiv2logo sheetdiv2headerdescription"
+    "sheetdiv2logo sheetdiv2headerdescription";
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.sliding-box-div-2-header-description {
+  display: grid;
+  grid-area: sheetdiv2headerdescription;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.sliding-box-div-2-logo {
+  display: grid;
+  grid-area: sheetdiv2logo;
+  align-self: center;
+  height: 50px;
+  width: 50px;
+}
+
+.sliding-box-div-3 {
+  display: grid;
+  grid-area: sheetdiv3;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "sheetdiv3logo sheetdiv3headerdescription"
+    "sheetdiv3logo sheetdiv3headerdescription";
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.sliding-box-div-3-header-description {
+  display: grid;
+  grid-area: sheetdiv3headerdescription;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.sliding-box-div-3-logo {
+  display: grid;
+  grid-area: sheetdiv3logo;
+  align-self: center;
+  height: 50px;
+  width: 50px;
+}
+
+.sliding-box-div-4 {
+  display: grid;
+  grid-area: sheetdiv4;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "sheetdiv4logo sheetdiv4headerdescription"
+    "sheetdiv4logo sheetdiv4headerdescription";
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.sliding-box-div-4-header-description {
+  display: grid;
+  grid-area: sheetdiv4headerdescription;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.sliding-box-div-4-logo {
+  display: grid;
+  grid-area: sheetdiv4logo;
+  align-self: center;
+  height: 50px;
+  width: 50px;
+}
+
+.sliding-box-div-header {
+  font-family: arial;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #ada492;
+}
+
+.sliding-box-div-description {
+  color: grey;
+}
