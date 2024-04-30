@@ -4,6 +4,8 @@ import Engine from "./assets/Engine.png";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./Components/Cart/Cart";
 import ContactUs from "./Components/ContactUs/ContactUs";
+import Login from "./Components/Login/Login";
+import SignUp from "./Components/SignUp/SignUp";
 
 function App() {
   const [products, setProducts] = useState([
@@ -25,14 +27,18 @@ function App() {
 
   return (
     <>
-      <Routes>
+     {
+
+    
+     <Routes>
         <Route
           path="/cart"
           element={<Cart products={products} removeItem={removeItem} />}
         />
-
+         <Route path="/sign-up" element={<SignUp />} />
+           <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<ContactUs />} />
-      </Routes>
+      </Routes> }
     </>
   );
 }
