@@ -1,0 +1,85 @@
+.frame .div {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 38px;
+    padding: 30px 0px 0px;
+    position: relative;
+  }
+  
+  .frame .group {
+    height: 60px;
+    position: relative;
+    width: 62px;
+  }
+  
+  .frame .overlap-group {
+    background-color: var(--primary);
+    border-radius: 10px;
+    height: 60px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .frame .text-wrapper {
+    color: #ffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+  }
+  
+  .frame .overlap {
+    background-color:#f9f1e7;
+    border-radius: 10px;
+    height: 60px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .frame .text-wrapper-2 {
+    color: #000000;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+  }
+  
+  .frame .overlap-wrapper {
+    height: 60px;
+    margin-right: -2px;
+    position: relative;
+    width: 100px;
+  }
+  
+  .frame .div-wrapper {
+    background-color: #f9f1e7;
+    border-radius: 10px;
+    height: 60px;
+    position: relative;
+    width: 98px;
+  }
+  
+  .frame .text-wrapper-3 {
+    color: #000000;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    left: 28px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+  }
+ 
+  
+  /* Continue with the rest of your CSS styles */
+  

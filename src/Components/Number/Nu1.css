@@ -1,0 +1,65 @@
+/* Nu1.css */
+.options-container {
+  width: 20%; /* Adjust as necessary */
+  height:699px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.header {
+  background-color: #f7f7f7;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options {
+  max-height:auto; /* Adjust based on the size of the items */
+  overflow-y: auto; /* Allows scrolling */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
+.filter {
+  max-height:130px; /* Adjust based on the size of the items */
+  overflow-y: auto; /* Allows scrolling */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Custom scrollbar styling */
+.options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.options::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.options::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .options-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+}

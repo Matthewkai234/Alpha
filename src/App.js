@@ -1,35 +1,32 @@
-import { useState } from "react";
+
 import "./App.css";
-import Engine from "./assets/Engine.png";
-import { Route, Routes } from "react-router-dom";
-import Cart from "./Components/Cart/Cart";
-
+import NavBar from "./Components/Common/NavBar";
+import MainWallpaper from "./assets/MainWallpaper.png";
+import Nu from "./Components/Number/Nu";
+import Counter from "./Components/Number/Counter";
+import SlidingArea from "./Components/SlidingArea/SlidingArea";
+import Footer from "./Components/Common/Footer";
+import ProductList from "./Components/ProductList";
 function App() {
-  const [products, setProducts] = useState([
-    {
-      image: Engine,
-      name: "Product1",
-      price: 69,
-      quantity: 2,
-    },
-  ]);
-
-  function removeItem(idx) {
-    setProducts((previous) => {
-      const newProducts = [...previous];
-      newProducts.splice(idx, 1);
-      return newProducts;
-    });
-  }
-
   return (
     <>
-      <Routes>
-        <Route
-          path="/cart"
-          element={<Cart products={products} removeItem={removeItem} />}
+  <NavBar/>
+  <div className="MainWallpaper">
+        <img
+          alt="MainWallpaper"
+          src={MainWallpaper}
+          style={{ width: "100%", height: "100%", filter: "blur(6px)" }}
         />
-      </Routes>
+      </div>
+      <Nu/>
+    
+      <ProductList/>
+<Counter/>
+<SlidingArea/>
+<Footer/>
+
+ 
+
     </>
   );
 }
