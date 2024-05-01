@@ -10,7 +10,7 @@ import ProductList from "./ProductList.js";
 export default function Home() {
   return (
     <>
-      <div className="hhome-web-container">
+      <div className="home-web-container">
 
         <NavBar />
 
