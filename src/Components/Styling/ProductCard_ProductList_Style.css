@@ -20,8 +20,13 @@
 }
 
   .product-card {
-    width: 283px;
-    height: 425px;
+    width: 90%; /* Adjust as needed */
+    max-width: 283px; /* Maximum width */
+    height: auto; /* Allow height to adjust based on content */
+    max-height: 550px;
+
+    /* width: 283px;
+    height: 425px; */
 
     /* border-radius: 10px;
     border: 3px solid transparent;
@@ -105,18 +110,23 @@
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
 
     width: 100%;
-    height: 450px;
+    height: 100%;
 
     border-radius: 13px;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 80px 16px;
-
+/*     padding: 80px 16px;
+ */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 0;
+    margin: 0;
 
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease; /* Smooth transition for opacity */

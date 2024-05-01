@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Star from "./Star";
-import "./Styling/ProductCard_ProductList_Style.css";
-import "./Styling/StarStyle.css";
+import "../Styling/ProductCard_ProductList_Style.css";
+import "../Styling/StarStyle.css";
 import CardOverlay from "./CardOverlay";
 
 function ProductCard({ product }) {
@@ -24,6 +24,7 @@ function ProductCard({ product }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       >
+        
         <img src={product.image} alt={product.name} className="product-image" />
 
         <h3 className="product-name">{product.name}</h3>
@@ -37,13 +38,13 @@ function ProductCard({ product }) {
 
         <div className="price-container">
             <div className="discounted-price">{product.discountedPrice}$</div>
-            <div className="original-price">{product.originalPrice}$</div>
+            <div className="original-price">{product.originalPrice}$</div>            
         </div>
-        {/* {isHovered && ( */}
-          <div className={`overlay ${isHovered ? 'active' : ''}`}>
-            {isHovered && <CardOverlay/>}{/* Render the overlay and button within flex container */}
-          </div>
-        {/* )} */}
+
+        <div className={`overlay ${isHovered ? 'active' : ''}`}>
+          {isHovered && <CardOverlay/>}{/* Render the overlay and button within flex container */}
+        </div>
+        
     </div>
   );
 }

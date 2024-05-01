@@ -1,5 +1,5 @@
-import ProductCard from "./ProductCard"; // Import ProductCard component
-import "./Styling/ProductCard_ProductList_Style.css";
+import ProductCard from "../Card/ProductCard"; // Import ProductCard component
+import "../Styling/ProductCard_ProductList_Style.css";
 
 function ProductList() {
   const products = [
