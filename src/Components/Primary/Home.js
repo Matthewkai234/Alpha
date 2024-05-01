@@ -11,9 +11,8 @@ export default function Home() {
   return (
     <>
       <div className="home-web-container">
-
         <NavBar />
-
+        
         <div className='home-main-cover'>
           <HeadBanner/>
         </div>
