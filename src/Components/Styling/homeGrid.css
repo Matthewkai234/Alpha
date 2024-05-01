@@ -23,8 +23,6 @@
 .home-main-cover{
     display: grid;
     grid-area: maincover;
-
-    max-height: 10%;
 }
 
 .categories-slider{
