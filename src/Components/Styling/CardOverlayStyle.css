@@ -1,128 +1,127 @@
-.product-card {
-    border-radius: 10.476px;
-    border: 3px solid #ffc000;
-    background-color: #fff;
-    max-width: 283px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 150%;
-  }
+/* .product-card {
+  border-radius: 10.476px;
+  border: 3px solid #ffc000;
+  background-color: #fff;
+  max-width: 283px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+ */
+.product-image-container {
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 80px 16px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 87px 0 54px;
+  padding: 0 8px;
+}
+
+.add-to-cart-button {
+  border-radius: 30px;
+
+  background-color: var(--color-white, #fff);
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: var(--primary, #b88e2f);
+
+  justify-content: center;
   
-  .product-image-container {
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 80px 16px;
-  }
-  
-  .product-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 87px 0 54px;
-    padding: 0 8px;
-  }
-  
-  .add-to-cart-button {
-    border-radius: 30px;
+  margin: 0 16px;
+  padding: 0 35px 14px;
 
-    background-color: var(--color-white, #fff);
+  border: none;
+  cursor: pointer;
 
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  transition: scale 0.3s;
+  /* line-height: 20px; */
+}
+.add-to-cart-button:hover{
+  scale: 1.05;
+}
 
-    color: var(--primary, #b88e2f);
+.share-button{
+  border: none;
+  background-color: transparent;
+  color: #fff;
 
-    justify-content: center;
-    
-    margin: 0 16px;
-    padding: 0 35px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border: none;
-    cursor: pointer;
+  gap: 5px;
+  cursor: pointer;
 
-    transition: scale 0.3s;
-    /* line-height: 20px; */
-  }
-  .add-to-cart-button:hover{
-    scale: 1.05;
-  }
-
-  .share-button{
-    border: none;
-    background-color: transparent;
-    color: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 5px;
-    cursor: pointer;
-
-    transition: scale 0.3s;
-  }
+  transition: scale 0.3s;
+}
 .share-button:hover{
-  scale: 1.05;
+scale: 1.05;
 }
 
-  .fav-button{
-    border: none;
-    background-color: transparent;
-    color: #fff;
+.fav-button{
+  border: none;
+  background-color: transparent;
+  color: #fff;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    gap: 5px;
-    cursor: pointer;
+  gap: 5px;
+  cursor: pointer;
 
-    transition: scale 0.3s;
-  }
+  transition: scale 0.3s;
+}
 .fav-button:hover{
-  scale: 1.05;
+scale: 1.05;
 }
 
-  .button-text-p {
-    font-family: Poppins, sans-serif;
-    font-size: large;
-    text-wrap: nowrap;
-    margin-top: 15px;
-    padding-bottom:0;
-    
-  }
-
-  .button-text-s {
-    font-family: Poppins, sans-serif;
-    text-wrap: nowrap;
-    padding-top: 0px;
-    padding-bottom:0;
-    
-  }
+.button-text-p {
+  font-family: Poppins, sans-serif;
+  font-size: large;
+  text-wrap: nowrap;
+  margin-top: 15px;
+  padding-bottom:0;
   
-  .button-icon {
-    width: 22px;
-    height: auto;
+}
 
-    padding-top: 10px;
-    padding-bottom:0;
-  }
+.button-text-s {
+  font-family: Poppins, sans-serif;
+  text-wrap: nowrap;
+  padding-top: 0px;
+  padding-bottom:0;
+  
+}
 
-  .button-icon-s {
-    width: 22px;
-    height: auto;
-    /* 
-    padding-top: 10px;
-    padding-bottom:0; */
-  }
-  
-  .product-actions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 24px;
-    padding-top: 27px;
-  }
-  
+.button-icon {
+  width: 22px;
+  height: auto;
+
+  padding-top: 10px;
+  padding-bottom:0;
+}
+
+.button-icon-s {
+  width: 22px;
+  height: auto;
+  /* 
+  padding-top: 10px;
+  padding-bottom:0; */
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 27px;
+}

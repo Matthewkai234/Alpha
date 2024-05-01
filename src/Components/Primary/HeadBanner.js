@@ -1,5 +1,5 @@
 import React from "react";
-import "./Styling/HeadBanner.css"; // Import the CSS file
+import "../Styling/HeadBanner.css"; // Import the CSS file
 
 const headBannerData = {
   title: "Find the Autopart for You",

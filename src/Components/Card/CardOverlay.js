@@ -1,4 +1,4 @@
-import "./Styling/CardOverlayStyle.css";
+import "../Styling/CardOverlayStyle.css";
 function CardOverlay() {
   return (
     <>

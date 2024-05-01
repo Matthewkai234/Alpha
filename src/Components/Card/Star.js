@@ -1,4 +1,4 @@
-import "./Styling/StarStyle.css";
+import "../Styling/StarStyle.css";
 
 function Star({ fill }) {
   const fillColor = fill ? "#FFC000" : "white";

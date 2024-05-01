@@ -1,4 +1,4 @@
-import "./Styling/SectionHeaderTextStyle.css";
+import "../Styling/SectionHeaderTextStyle.css";
 function SectionHeaderText(props) {
   return (
     <>

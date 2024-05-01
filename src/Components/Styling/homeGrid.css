@@ -1,0 +1,46 @@
+.home-web-container{
+  display: grid;
+  height: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+    
+  grid-row-gap: 5px;
+  grid-template-areas:
+    "nav"
+    "maincover"
+    "categories"
+    "flashsales"
+    "slidesheet"
+    "footer"
+}
+
+.navbar {
+    grid-area: nav;
+    margin-left: 90px;
+    margin-right:90px;
+  }
+
+.home-main-cover{
+    display: grid;
+    grid-area: maincover;
+}
+
+.categories-slider{
+    display: grid;
+    grid-area: categories;
+}
+
+.home-flash-sales{
+    display: grid;
+    grid-area: flashsales;
+}
+
+.home-page-sliding-sheet-for-latest-products{
+    display: grid;
+    grid-area: slidesheet;
+}
+
+.footer{
+    display:grid;
+    grid-area: footer;
+}
