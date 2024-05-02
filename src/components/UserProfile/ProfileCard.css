@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: space-around; /* This can be changed to 'space-around' for tighter spacing */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  display: block;
+  margin-bottom: 10px; 
+  color: black; 
+  font-size: 24px; 
+}
+
+
+.card, .personal-details {
+  margin-right: 20px;
+}
