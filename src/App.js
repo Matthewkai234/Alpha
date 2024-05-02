@@ -1,35 +1,26 @@
-import { useState } from "react";
+
 import "./App.css";
-import Engine from "./assets/Engine.png";
-import { Route, Routes } from "react-router-dom";
-import Cart from "./Components/Cart/Cart";
 
+import Pruduct from "./Components/Product/Pruduct";
+
+import NavBar from "./Components/Common/NavBar";
+import Footer from "./Components/Common/Footer";
+import Showmore from "../src/Components/Card/Showmore"
+import SlidingArea from "./Components/SlidingArea/SlidingArea";
+import ProductList from "../src/Components/Card/ProductList";
 function App() {
-  const [products, setProducts] = useState([
-    {
-      image: Engine,
-      name: "Product1",
-      price: 69,
-      quantity: 2,
-    },
-  ]);
-
-  function removeItem(idx) {
-    setProducts((previous) => {
-      const newProducts = [...previous];
-      newProducts.splice(idx, 1);
-      return newProducts;
-    });
-  }
-
+ 
   return (
     <>
-      <Routes>
-        <Route
-          path="/cart"
-          element={<Cart products={products} removeItem={removeItem} />}
-        />
-      </Routes>
+    <NavBar/>
+   
+            <Pruduct/>
+       
+  <ProductList/>
+  <Showmore/>
+    <SlidingArea/>
+    <Footer/>
+      
     </>
   );
 }

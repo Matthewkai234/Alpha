@@ -1,0 +1,15 @@
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* يضمن أن الزر يظهر في مركز الصفحة بشكل عمودي */
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  background-color: gold; /* لون ذهبي للزر */
+  border: none;
+  border-radius: 20px; /* حواف مدورة */
+  font-weight: bold;
+  cursor: pointer; /* يظهر المؤشر على شكل يد عند المرور فوق الزر */
+}

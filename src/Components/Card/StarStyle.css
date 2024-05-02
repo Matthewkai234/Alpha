@@ -1,0 +1,16 @@
+.rating-star {
+    width: 47px;
+    aspect-ratio: 3.57;
+    object-fit: contain;
+    object-position: center;
+    margin-top: 15px;
+    /* width: 24px;
+    height: 24px;
+    object-fit: contain; */
+  }
+
+.stars-container{
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
