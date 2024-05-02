@@ -1,0 +1,138 @@
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px; /* Add padding to the sides to create space between grid items and the edges of the container */
+  max-width: 1200px; /* Set a maximum width for the container to prevent grid items from going out of the border */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+@media (min-width: 768px) {
+  .product-list {
+    padding: 0 40px; /* Increase the padding for medium-sized screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-list {
+    padding: 0; /* Remove padding for larger screens */
+  }
+}
+
+  .product-card {
+    width: 90%; /* Adjust as needed */
+    max-width: 283px; /* Maximum width */
+    height: auto; /* Allow height to adjust based on content */
+    max-height: 550px;
+
+    /* width: 283px;
+    height: 425px; */
+
+    /* border-radius: 10px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to bottom, #ffc000, white) 1;
+    border-image-slice: 1; */
+
+    background: transparent;
+    padding: 0.5rem 1rem;
+    background-image:
+        linear-gradient(to top, white, white), 
+        linear-gradient(to bottom, #ffc000, white);
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    border: 3px solid transparent;
+    border-radius: 1rem;
+
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    align-items: center;
+    text-align: center;
+
+    padding: 15px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+  }
+  
+  .product-image {
+    width: 100%;
+    aspect-ratio: 1.09;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .product-name {
+    color: #000;
+    margin-top: 36px;
+    font: 700 15px Poppins, sans-serif;
+  }
+  
+  .product-brand {
+    color: #444;
+    margin-top: 13px;
+    font: bolder 13px Lato, sans-serif;
+  }
+  .product-code {
+    color: #444;
+    margin-top: 13px;
+    font: 500 13px Lato, sans-serif;
+  }
+  
+  .price-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    font-size: 17px;
+    color: #a87e00;
+  }
+  
+  .discounted-price {
+    font-family: Lato, sans-serif;
+    font-weight: 800;
+  }
+  
+  .original-price {
+    font-family: Lato, sans-serif;
+    text-decoration: line-through;
+    border-radius: 20px;
+    border: 1px solid rgba(168, 126, 0, 1);
+    background-color: rgba(217, 217, 217, 0);
+    font-weight: 300;
+    padding: 6px 9px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 13px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.4);
+/*     padding: 80px 16px;
+ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  }
+  
+  .overlay.active {
+    opacity: 1;
+  } 
+ 
