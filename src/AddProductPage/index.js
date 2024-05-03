@@ -1,0 +1,1 @@
+export { AddProductPage } from "./AddProductPage";
