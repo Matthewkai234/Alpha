@@ -1,92 +1,51 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const numbers = "1234567890";
-  const capitalAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const symbols = "!@#$%^&*()-_=+,.?/:;{}[]~";
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  function doesStringContain(text, collection) {
-    for (const letter of collection) {
-      if (text.includes(letter)) return true;
-    }
-    return false;
-  }
-
-  function validatePassword() {
-    if (password === "") {
-      setMessage("");
-      return false;
-    }
-    if (password.length < 8) {
-      setMessage("Password must be at least 8 characters");
-      return false;
-    } else {
-      setMessage("");
-    }
-
-    if (!doesStringContain(password, capitalAlphabet)) {
-      setMessage("Password must contain at least one capital letter");
-      return false;
-    } else {
-      setMessage("");
-    }
-
-    if (!doesStringContain(password, symbols)) {
-      setMessage("Password must contain at least one symbol");
-      return false;
-    } else {
-      setMessage("");
-    }
-
-    if (!doesStringContain(password, numbers)) {
-      setMessage("Password must contain at least one number");
-      return false;
-    } else {
-      setMessage("");
-    }
-
-    return true;
-  }
-
-  function validateEmail() {
-    const validator = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return validator.test(email);
-  }
-
-  function handleLoginSubmit(e) {
+  async function handleLoginSubmit(e) {
     e.preventDefault();
 
-    if (!validateEmail()) {
-      setMessage("Invalid Email");
-      return;
-    }
+    try {
+      const response = await fetch("http://localhost:3005/login", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
 
-    if (!validatePassword()) {
-      setMessage("Invalid password");
-      return;
+      if (response.ok) {
+        navigate("/home");
+      } else {
+        const errMsg = await response.text();
+        setMessage("Login failed: " + errMsg);
+      }
+    } catch (err) {
+      setMessage("Network error: " + err.message);
     }
-
-    navigate("/home");
   }
-
-  useEffect(() => {
-    validatePassword();
-  }, [password]);
 
   return (
     <div className="login-background-main">
+
       <div className="login-main-section">
-        <p className="login-header" align="center">
-          Login
-        </p>
+      
+      <div className="image-container" align="center">
+        <img
+          className="motorsport-logo"
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/df9b3848d276d1d2fc5395bb5bf4479fdc91cd78aac03f6874f22b8e07b24f30?apiKey=72ba7d21523a435cb5437721466af3ff&"
+          alt="Motorsport Logo"
+        />
+      </div>
+
+        <p className="login-header" align="center">Login</p>
         <form onSubmit={handleLoginSubmit} className="login-form">
           <div>
             <input
@@ -94,27 +53,27 @@ function Login() {
               type="email"
               name="email"
               placeholder="Email"
+              value={email}
               onChange={(e) => setEmail(e.currentTarget.value)}
               required
             />
           </div>
           <div>
             <input
-              onChange={(e) => setPassword(e.currentTarget.value)}
               className="login-password"
               type="password"
               name="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.currentTarget.value)}
               required
             />
             <p className="password-error-message">{message}</p>
           </div>
-          <button className="login-submit" align="center">
-            Login
-          </button>
+          <button className="login-submit" align="center">Login</button>
           <p className="login-forgot-password" align="center">
-            <Link className="forgot-password-link" to="/signup">
-              Forgot Password?{" "}
+            <Link className="forgot-password-link" to="/sign-up">
+              Create Account?
             </Link>
           </p>
         </form>
