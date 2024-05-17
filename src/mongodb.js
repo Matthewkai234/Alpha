@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
-
-mongoose.connect('mongodb://localhost:27017/jihades',{
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-})
-
+mongoose.connect('mongodb://localhost:27017/jihades')
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
@@ -15,7 +10,14 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true }
 });
 
-s
-const UserModel = mongoose.model('users', userSchema);
+const contactSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    subject: { type: String },
+    message: { type: String, required: true }
+}, { timestamps: true });
 
-module.exports = UserModel;
+const UserModel = mongoose.model('users', userSchema);
+const ContactModel=mongoose.model('contacts',contactSchema);
+module.exports = {UserModel,ContactModel};
+
