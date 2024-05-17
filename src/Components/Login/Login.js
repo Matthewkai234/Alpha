@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useGoogleLogin } from '@react-oauth/google';
+import {jwtDecode} from 'jwt-decode';
 import "./Login.css";
 
 function Login() {
@@ -31,19 +33,30 @@ function Login() {
     }
   }
 
+//start work on gogle contuine
+  const googleLogin = useGoogleLogin({
+    onSuccess: (credentialResponse) => {
+      const decoded = jwtDecode(credentialResponse.credential);
+      console.log(decoded);
+    
+
+    },
+    onError: () => {
+      console.log("Login Failed");
+    }
+  });
+
   return (
     <div className="login-background-main">
-
       <div className="login-main-section">
-      
-      <div className="image-container" align="center">
-        <img
-          className="motorsport-logo"
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/df9b3848d276d1d2fc5395bb5bf4479fdc91cd78aac03f6874f22b8e07b24f30?apiKey=72ba7d21523a435cb5437721466af3ff&"
-          alt="Motorsport Logo"
-        />
-      </div>
+        <div className="image-container" align="center">
+          <img
+            className="motorsport-logo"
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/df9b3848d276d1d2fc5395bb5bf4479fdc91cd78aac03f6874f22b8e07b24f30?apiKey=72ba7d21523a435cb5437721466af3ff&"
+            alt="Motorsport Logo"
+          />
+        </div>
 
         <p className="login-header" align="center">Login</p>
         <form onSubmit={handleLoginSubmit} className="login-form">
@@ -76,6 +89,11 @@ function Login() {
               Create Account?
             </Link>
           </p>
+          <button className="googleButton" onClick={googleLogin}>
+          <img src="https://th.bing.com/th/id/OIP.0eRUZcdA6VxiTjvM4MoR9gAAAA?rs=1&pid=ImgDetMain" alt="Google Icon" className="google-icon" />
+
+  <span>Continue with Google</span>
+</button>
         </form>
       </div>
     </div>

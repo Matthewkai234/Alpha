@@ -64,6 +64,7 @@ function SignUp() {
     if (!validatePassword()) {
       return;
     }
+    
 
     try {
       const response = await fetch("http://localhost:3005/register", {
@@ -85,7 +86,7 @@ function SignUp() {
   }
 
   useEffect(() => {
-    setMessage(""); // Clear messages when username or password changes
+    setMessage("");
   }, [username, password]);
 
   return (

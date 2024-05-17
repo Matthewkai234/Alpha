@@ -41,7 +41,16 @@ export default function NavBar() {
   return (
     <>
       <Navbar className="navbar" expand="lg">
-        <Navbar.Brand href="#company-name">PaliParts</Navbar.Brand>
+      <Navbar.Brand href="#company-logo">
+  <img
+    className="motorsport-logo"
+    loading="lazy"
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/df9b3848d276d1d2fc5395bb5bf4479fdc91cd78aac03f6874f22b8e07b24f30?apiKey=72ba7d21523a435cb5437721466af3ff&"
+    alt="Motorsport Logo"
+    style={{ width: '80px', height: 'auto' }} 
+  />
+</Navbar.Brand>
+
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="mx-auto">
