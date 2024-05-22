@@ -1,18 +1,10 @@
 import React from "react";
-import { Footer } from "../../components/Footer";
-import { Navbar } from "../../components/Navbar";
-import "./style.css";
-export const Checkout = () => {
+import './Checkout.css';
+
+function Checkout () {
   return (
     <div className="checkout">
       <div className="div-2">
-        <Navbar
-          akarIconsHeart="/img/akar-icons-heart-1.svg"
-          akarIconsSearch="/img/akar-icons-search-1.svg"
-          antDesignShopping="/img/ant-design-shopping-cart-outlined-1.svg"
-          mdiAccountAlert="/img/mdi-account-alert-outline-1.svg"
-          skinClinic="/img/skinclinic-1.svg"
-        />
         <div className="overlap-wrapper">
           <div className="overlap">
             <div className="overlap-group-wrapper">
@@ -221,8 +213,8 @@ export const Checkout = () => {
             </div>
           </div>
         </div>
-        <Footer className="footer-instance" />
       </div>
     </div>
   );
 };
+export default Checkout;

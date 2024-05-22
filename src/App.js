@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Footer from './components/footer'; 
-import Checkout from './components/checkout';
-import Navbar from './components/navbar';
+import Footer from './components/footer/Footer.js'; 
+import Checkout from './components/checkout/Checkout.jsx';
+import Navbar from './components/navbar/Navbar.js';
 
 function App() {
   // State to store fetched file content
@@ -21,7 +21,7 @@ function App() {
   // Function to fetch file content from backend
   const fetchFileContent = async (endpoint, setContent) => {
     try {
-      const response = await fetch(`http://localhost:3000/${endpoint}`); // Assuming backend is running on localhost:3000
+      const response = await fetch(`http://localhost:5000/${endpoint}`); // Assuming backend is running on localhost:5000
       const content = await response.text();
       setContent(content);
     } catch (error) {

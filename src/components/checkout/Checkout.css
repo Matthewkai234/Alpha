@@ -28,7 +28,6 @@ div {
   }
   
   .checkout .overlap {
-    background-image: url(../../../static/img/rectangle-1.png);
     background-position: 50% 50%;
     background-size: cover;
     height: 328px;
