@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from "../../components/Footer";
-import { Navbar } from "../../components/Header";
+import { Navbar } from "../../components/Navbar";
 import "./style.css";
 export const Checkout = () => {
   return (
@@ -137,6 +137,7 @@ export const Checkout = () => {
                     <div className="group-29">
                       <div className="overlap-group-4">
                       <button class="custom-button">Place order</button>
+                      
                       </div>
                     </div>
                     <img className="line-3" alt="Line" src="/img/line-10.svg" />

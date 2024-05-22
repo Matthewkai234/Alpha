@@ -1,0 +1,57 @@
+.footer {
+    background-color: #f8f9fa; /* Light background color */
+    color: #6c757d; /* Muted text color */
+    padding: 20px 0; /* Padding on top and bottom */
+    position: fixed; /* Fix the footer at the bottom of the page */
+    bottom: 0; /* Align it to the bottom */
+    width: 100%; /* Full width */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for separation */
+  }
+  
+  /* Style for footer titles */
+  .footer-title {
+    font-size: 24px; /* Larger font size */
+    color: black; /* Black color */
+    font-family: Arial, sans-serif; /* Arial font */
+    font-weight: 700; /* Bold font weight */
+    word-wrap: break-word; /* Ensure long words break */
+  }
+  
+  /* Style for footer description text */
+  .footer-description {
+    color: #9f9f9f; /* Light grey color */
+  }
+  
+  /* Style for links */
+  .text-reset {
+    color: #6c757d; /* Muted text color */
+    text-decoration: none; /* No underline */
+  }
+  
+  /* Hover effect for links */
+  .text-reset:hover {
+    color: #000; /* Black color on hover */
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Additional styling for container and sections */
+  .container {
+    max-width: 1200px; /* Limit the max width */
+    margin: 0 auto; /* Center align */
+  }
+  
+  .section {
+    padding: 20px 0; /* Padding on top and bottom */
+  }
+  
+  /* Responsive adjustments for small screens */
+  @media (max-width: 768px) {
+    .footer-title {
+      font-size: 20px; /* Slightly smaller font on small screens */
+    }
+  
+    .footer {
+      padding: 15px 0; /* Reduce padding on small screens */
+    }
+  }
+  
