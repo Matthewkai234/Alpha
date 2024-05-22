@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
 }
 
 .App-logo {
@@ -22,6 +25,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex: 1; /* Allow header to grow */
 }
 
 .App-link {
@@ -36,3 +40,25 @@
     transform: rotate(360deg);
   }
 }
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/* Content area to accommodate the footer */
+.main-content {
+  flex: 1; /* Allow content to grow */
+  padding-bottom: 100px; /* Space for the fixed footer */
+}
+
+/* Footer style */
+footer {
+  background-color: #f8f9fa; /* Light background color */
+  color: #6c757d; /* Muted text color */
+  padding: 20px 0; /* Padding on top and bottom */
+  position: fixed; /* Fix the footer at the bottom of the page */
+  bottom: 0; /* Align it to the bottom */
+  width: 100%; /* Full width */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for separation */
+}
+
