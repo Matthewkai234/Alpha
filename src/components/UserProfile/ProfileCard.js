@@ -1,13 +1,19 @@
 import React from 'react';
 import './ProfileCard.css';
-import userProfileImage from './img/user.png';  // Ensure this path is correct
-import { FaGithub, FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa'; // Importing icons
+import userProfileImage from '../img/user.png';
+import { FaGithub, FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa'; 
 
 const ProfileCard = () => {
+  const handleLogout = () => {
+    
+    console.log('User logged out');
+    window.location.href = 'https://www.example.com'; 
+  };
+
   return (
     <div className="main-body">
-      <div className="container d-flex justify-content-between">  {/* Flex container for layout */}
-        <div> {/* Column for image and social links */}
+      <div className="container d-flex justify-content-between">
+        <div>
           <div className="card text-center">
             <div className="card-body">
               <img src={userProfileImage} alt="John Doe" className="profile-image mb-3" />
@@ -35,6 +41,7 @@ const ProfileCard = () => {
             <p>(320) 380-4539</p>
             <h3>Address</h3>
             <p>Bay Area, San Francisco, CA</p>
+            <button onClick={handleLogout} className="btn btn-primary mt-5">Logout</button>
           </div>
         </div>
       </div>
