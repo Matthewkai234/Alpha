@@ -7,13 +7,12 @@ import CardOverlay from "./CardOverlay";
 function ProductCard({ product }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Ensure the rating is between 0 and 5
+  
   const rating = Math.min(Math.max(0, product.rating), 5);
 
-  // Generate an array of Star components based on the rating
   const stars = Array.from({ length: rating }, (_, index) => <Star key={index} fill={true} />);
 
-  // Fill the remaining stars with empty stars
+  
   for (let i = rating; i < 5; i++) {
     stars.push(<Star key={i} fill={false} />);
   }
@@ -43,7 +42,7 @@ function ProductCard({ product }) {
         </div>
 
         <div className={`overlay ${isHovered ? 'active' : ''}`}>
-          {isHovered && <CardOverlay/>}{/* Render the overlay and button within flex container */}
+          {isHovered && <CardOverlay/>}
         </div>
         
     </div>

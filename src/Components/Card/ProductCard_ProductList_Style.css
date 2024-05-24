@@ -2,37 +2,28 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 0 20px; /* Add padding to the sides to create space between grid items and the edges of the container */
-    max-width: 1200px; /* Set a maximum width for the container to prevent grid items from going out of the border */
-    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
   }
   
   @media (min-width: 768px) {
     .product-list {
-      padding: 0 40px; /* Increase the padding for medium-sized screens */
+      padding: 0 40px; 
     }
   }
   
   @media (min-width: 1200px) {
     .product-list {
-      padding: 0; /* Remove padding for larger screens */
+      padding: 0; 
     }
   }
   
     .product-card {
-      width: 90%; /* Adjust as needed */
-      max-width: 283px; /* Maximum width */
-      height: auto; /* Allow height to adjust based on content */
+      width: 90%; 
+      max-width: 283px; 
+      height: auto; 
       max-height: 550px;
-  
-      /* width: 283px;
-      height: 425px; */
-  
-      /* border-radius: 10px;
-      border: 3px solid transparent;
-      border-image: linear-gradient(to bottom, #ffc000, white) 1;
-      border-image-slice: 1; */
-  
       background: transparent;
       padding: 0.5rem 1rem;
       background-image:
@@ -119,8 +110,8 @@
       border-radius: 13px;
       backdrop-filter: blur(5px);
       background-color: rgba(0, 0, 0, 0.4);
-  /*     padding: 80px 16px;
-   */
+  
+   
       display: flex;
       justify-content: center;
       align-items: center;
@@ -128,11 +119,34 @@
       padding: 0;
       margin: 0;
   
-      opacity: 0; /* Initially hidden */
-      transition: opacity 0.3s ease; /* Smooth transition for opacity */
+      opacity: 0; 
+      transition: opacity 0.3s ease; 
     }
     
     .overlay.active {
       opacity: 1;
     } 
-   
+   .show-more-btn {
+  display: block;
+  margin: 10px auto; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  color: #d4af37; 
+  background-color: #fff; 
+  border: 2px solid #d4af37; 
+  border-radius: 20px; 
+  cursor: pointer;
+  transition: all 0.3s ease; 
+  text-align: center; 
+}
+
+.show-more-btn:hover {
+  background-color: #d4af37; 
+  color: #fff; 
+}
+
+
+
+    
+    
+    

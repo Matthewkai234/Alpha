@@ -48,17 +48,17 @@
 }
 
 .add-to-cart-button {
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px 15px;
-  cursor: pointer;
-  margin-left: 10px;
+  
+    width: 25%;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #f2f2f0;
+    box-sizing: border-box;
+    height: 59.5px;
 }
 
 .buttons-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 40px;
 }
