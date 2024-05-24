@@ -6,6 +6,97 @@
   max-width: 1200px; /* Set a maximum width for the container to prevent grid items from going out of the border */
   margin: 0 auto; /* Center the container horizontally */
 }
+.product-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination {
+  margin-top: 20px; /* Adjust this value as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.add-to-cart-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: #ff9900; /* Adjust as needed */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 10; /* Ensure it appears on top */
+}
+
+.product-card:hover .add-to-cart-btn {
+  opacity: 1;
+}
+
+.product-details, .product-actions, .price-container, .product-name {
+  text-align: center; /* Optional: Align text to center */
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+.col-lg-4 {
+  margin-bottom: 20px;
+}
+
+.tour-pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
 
 @media (min-width: 768px) {
   .product-list {
