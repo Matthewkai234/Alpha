@@ -23,6 +23,8 @@ function Login() {
       });
 
       if (response.ok) {
+        const { token } = await response.json();
+        localStorage.setItem("token", token);
         navigate("/home");
       } else {
         const errMsg = await response.text();
@@ -33,13 +35,12 @@ function Login() {
     }
   }
 
-//start work on gogle contuine
   const googleLogin = useGoogleLogin({
     onSuccess: (credentialResponse) => {
       const decoded = jwtDecode(credentialResponse.credential);
+      localStorage.setItem("token", credentialResponse.credential);
       console.log(decoded);
-    
-
+      navigate("/home");
     },
     onError: () => {
       console.log("Login Failed");
@@ -57,7 +58,6 @@ function Login() {
             alt="Motorsport Logo"
           />
         </div>
-
         <p className="login-header" align="center">Login</p>
         <form onSubmit={handleLoginSubmit} className="login-form">
           <div>
@@ -82,18 +82,20 @@ function Login() {
               required
             />
             <p className="password-error-message">{message}</p>
+            <Link className="forgot-password-link" to="/forget-password">
+              Forget Password?
+            </Link>
           </div>
           <button className="login-submit" align="center">Login</button>
-          <p className="login-forgot-password" align="center">
-            <Link className="forgot-password-link" to="/sign-up">
+          <p className="login-create-acount" align="center">
+            <Link className="create-account-link" to="/sign-up">
               Create Account?
             </Link>
           </p>
           <button className="googleButton" onClick={googleLogin}>
-          <img src="https://th.bing.com/th/id/OIP.0eRUZcdA6VxiTjvM4MoR9gAAAA?rs=1&pid=ImgDetMain" alt="Google Icon" className="google-icon" />
-
-  <span>Continue with Google</span>
-</button>
+            <img src="https://th.bing.com/th/id/OIP.0eRUZcdA6VxiTjvM4MoR9gAAAA?rs=1&pid=ImgDetMain" alt="Google Icon" className="google-icon" />
+            <span>Continue with Google</span>
+          </button>
         </form>
       </div>
     </div>

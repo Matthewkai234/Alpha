@@ -1,20 +1,18 @@
-require('dotenv').config();
 const express = require("express");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const { UserModel, ContactModel } = require("./mongodb");
 const cors = require('cors');
+const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
-
+const secretKey = crypto.randomBytes(64).toString('hex');
 const app = express();
 const port = 3005;
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
-
 
 // Register logic
 app.post('/register', async (req, res) => {
@@ -46,7 +44,6 @@ app.post('/register', async (req, res) => {
     }
 });
 
-// Login logic
 app.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -59,8 +56,11 @@ app.post('/login', async (req, res) => {
 
         // Check password
         const isMatch = await bcrypt.compare(password, user.password);
+     
         if (isMatch) {
-            res.status(200).send("Logged in successfully!");
+            // using  JWT token
+            const token = jwt.sign({ userId: user._id }, secretKey, { expiresIn: '1h' });
+            res.status(200).json({ token });
         } else {
             return res.status(400).send("Wrong Email Or Password!");
         }
@@ -69,6 +69,70 @@ app.post('/login', async (req, res) => {
         res.status(500).send({ Message: err.message });
     }
 });
+
+//  virefy token
+function authenticateToken(req, res, next) {
+    const token = req.header('Authorization')?.split(' ')[1];
+    if (!token) return res.sendStatus(401);
+
+    jwt.verify(token, secretKey, (err, user) => {
+        if (err) return res.sendStatus(403);
+        req.user = user;
+        next();
+    });
+}
+
+
+app.get('/home', authenticateToken, (req, res) => {
+    res.send('Welcome to the protected route, user: ' + req.user.userId);
+});
+
+
+
+
+app.post('/forget-password', async (req, res) => {
+    try {
+        const { email } = req.body;
+
+       
+        const user = await UserModel.findOne({ email });
+        if (!user) {
+            return res.status(404).send('User with this email does not exist');
+        }
+
+        
+       
+        const verificationCode = crypto.randomInt(100000,999999).toString();
+     
+
+    
+        user.resetPasswordToken = verificationCode;
+        user.resetPasswordExpires = Date.now() + 3600000; 
+        await user.save();
+
+        
+
+        // i send the verification email 
+        const mailOptions = {
+            from: 'lobomotorsports14@gmail.com',
+            to: user.email,
+            subject: 'Password Reset Verification Code',
+            text: `You requested a password reset. Your verification code is: ${verificationCode}`,
+            html: `<p>You requested a password reset. Your verification code is:</p><h2>${verificationCode}</h2>`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.status(200).send('Password reset email sent');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+});
+
+
+
+
+
 
 // Contact Us logic
 const transporter = nodemailer.createTransport({
@@ -117,7 +181,7 @@ app.post('/contact', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
 app.listen(port, () => {
     console.log(`Server is started on port ${port}`);
 });
-
