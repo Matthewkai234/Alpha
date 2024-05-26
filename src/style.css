@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; 
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  position: static; 
+  top: 0;
+  z-index: 1000;
+  width: 100%; 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 15px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ff0000;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.content {
+  padding: 0;
+  max-width: 100%;
+}
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.description-overlay {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center; 
+  z-index: 1; 
+  color: #fff; 
+  padding: 10px;
+
+  background: rgba(0, 0, 0, 0.7); 
+  border-radius: 15px; 
+}
+
+.title {
+  font-size: 3rem; 
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.8rem; 
+  margin-bottom: 20px;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.navigation-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff0000;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.navigation-buttons button:hover {
+  background-color: #cc0000;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .icons {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title,
+.description {
+  animation: none;
+}
+
+.title.show,
+.description.show {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+button.nav-link {
+  padding: 0;
+  border: none;
+  background: none;
+}
