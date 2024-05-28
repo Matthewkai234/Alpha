@@ -129,3 +129,4 @@ app.post('/forget-password', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server is started on port ${port}`);
 });
+
