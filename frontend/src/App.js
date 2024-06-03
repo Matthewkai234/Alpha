@@ -9,6 +9,10 @@ import ContactUs from "./Components/ContactUs/ContactUs";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 import NewPassword from "./Components/ForgetPass/NewPass";
+import Checkout from "./Components/checkout/Checkout";
+import Checkout from "./Components/Common/Footer";
+import Checkout from "./Components/Common/NavBar";
+
 
 function App() {
   const [products, setProducts] = useState([
@@ -41,7 +45,11 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/codeVer/:email" element={<VerificationCode />} />
         <Route path="/newPass" element={<NewPassword />} />
+        <Checkout path="/Checkout" element={<Checkout/>}/>
+        <Common path="/Common" element={<Common/>}/>
+
       </Routes>
+
     </>
   );
 }

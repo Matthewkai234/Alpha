@@ -1,13 +1,13 @@
 // src/components/checkout/Checkout.jsx
 import React from 'react';
-import Footer from '../Footer/Footer';
-import Navbar from '../navbar/Navbar';
+import Footer from '../Common/Footer';
+import NavBar from '../Common/NavBar';
 import './Checkout.css'; 
 export const Checkout = () => {
   return (
     <div className="checkout">
       <div className="div-2">
-        <Navbar
+        <NavBar
           akarIconsHeart="/img/akar-icons-heart-1.svg"
           akarIconsSearch="/img/akar-icons-search-1.svg"
           antDesignShopping="/img/ant-design-shopping-cart-outlined-1.svg"
