@@ -1,0 +1,87 @@
+.body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+  }
+  
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-container {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+  }
+  
+  .group-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .frame {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 10px; 
+  }
+  
+  .skin-clinic {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title {
+    color: rgb(251, 198, 5);
+    font-size: x-large;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .title2 {
+    font-size: x-large;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    cursor: pointer;
+  }
+  
+  .group-two {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .group-two span {
+    margin: 0 10px; 
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .group-two span:hover {
+    color: gold; 
+  }
+  
+  .rectangle {
+    height: 1px;
+    background-color: #000000;
+    margin-top: 10px;
+  }

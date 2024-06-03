@@ -11,12 +11,16 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
+<<<<<<< HEAD:package.json
+    "body-parser": "^1.20.2",
+=======
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "dotenv-expand": "^11.0.6",
+>>>>>>> cfe6fa76f66bb6dcd97c1948319fd17d1cd68ebb:frontend/package.json
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "jsonwebtoken": "^9.0.2",
@@ -60,6 +64,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "http://localhost:3000",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "keywords": [],
