@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import React from "react";
 
 export default function Footer() {
   return (
@@ -19,7 +18,7 @@ export default function Footer() {
                   }}
                   className="text-uppercase fw-bold mb-4"
                 >
-                  PaliParts
+                 Lobo MotorSport
                 </h6>
                 <p style={{ color: "#9F9F9F" }}>
                   To help you get to buy autoparts online, without direct

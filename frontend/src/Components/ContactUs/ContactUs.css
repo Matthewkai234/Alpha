@@ -1,0 +1,38 @@
+.MainWallpaper img {
+    width: 100%;
+    height: 100%;
+    filter: blur(6px);
+}
+
+.contactInfo {
+    text-align: center;
+    color: grey;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactForm input, .contactForm textarea {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
+.contactForm button {
+    background-color: #B88E2F;
+    border: none;
+    padding: 0.5em 2em;
+    color: white;
+    border-radius: 5px;
+}
