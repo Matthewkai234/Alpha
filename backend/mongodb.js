@@ -18,8 +18,27 @@ const userSchema = new mongoose.Schema({
     resetPasswordToken: { type: String },
     resetPasswordExpires: { type: Date }
 });
+const ButtonSchema = new mongoose.Schema({
+    orderType: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+const TextboxSchema = new mongoose.Schema({
+    firstName: { type: String },
+    lastName: { type: String },
+    companyName: { type: String },
+    streetAddress: { type: String },
+    zipCode: { type: String },
+    city: { type: String },
+    phone: { type: String },
+    email: { type: String },
+    additionalInfo: { type: String },
+    country: { type: String },
+    province: { type: String }
+});
 
 const UserModel = mongoose.model('User', userSchema);
 const ContactModel = mongoose.model('contacts', contactSchema);
+const ButtonModel = mongoose.model('Button', ButtonSchema);
+const TextboxModel = mongoose.model('Textbox', TextboxSchema);
 
-module.exports = { UserModel, ContactModel };
+module.exports = { UserModel, ContactModel, ButtonModel, TextboxModel };
