@@ -24,6 +24,25 @@ const orderSchema = new mongoose.Schema({
 });
 
 const Order = mongoose.model('Order', orderSchema);
+//new order
+const newOrder = new Order({ orderType: 'online purchase' });
+newOrder.save()
+  .then(() => console.log('Order placed successfully'))
+  .catch(err => console.error('Error placing order:', err));
+  
+//finding the order
+Order.find({ orderType: 'online purchase' })
+  .then(orders => console.log('Found orders:', orders))
+  .catch(err => console.error('Error finding orders:', err));
+
+//Updating an order
+Order.updateOne({ _id: 'someOrderId' }, { orderType: 'in-store purchase' })
+  .then(() => console.log('Order updated successfully'))
+  .catch(err => console.error('Error updating order:', err));
+//Deleting an order
+Order.deleteOne({ _id: 'someOrderId' })
+  .then(() => console.log('Order deleted successfully'))
+  .catch(err => console.error('Error deleting order:', err));
 
 // Middleware
 app.use(express.json());
