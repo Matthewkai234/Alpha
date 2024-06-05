@@ -13,7 +13,6 @@ import Checkout from "./Components/checkout/Checkout";
 import Checkout from "./Components/Common/Footer";
 import Checkout from "./Components/Common/NavBar";
 
-
 function App() {
   const [products, setProducts] = useState([
     {
@@ -45,9 +44,9 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/codeVer/:email" element={<VerificationCode />} />
         <Route path="/newPass" element={<NewPassword />} />
-        <Checkout path="/Checkout" element={<Checkout/>}/>
-        <Common path="/Common" element={<Common/>}/>
-
+       <Checkout path="/Checkout" element={<Checkout/>}/>
+        <Common path="/Footer" element={<Footer/>}/>
+        <Common path="/NavBar" element={<NavBar/>}/>
       </Routes>
 
     </>
