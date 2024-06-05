@@ -9,9 +9,21 @@ import ContactUs from "./Components/ContactUs/ContactUs";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 import NewPassword from "./Components/ForgetPass/NewPass";
-import Checkout from "./Components/checkout/Checkout";
-import Checkout from "./Components/Common/Footer";
-import Checkout from "./Components/Common/NavBar";
+import ProductList from "./Components/Card/ProductList";
+import Productlist2 from "./Components/Productlist2";
+import ProductPage from "./Components/Product/Pruduct";
+import { AboutUsPage } from "./Body";
+import { Header } from "./Header";
+import AddProduct from "./AddProduct";
+import NavBar from "./Components/Common/NavBar";
+import SlidingArea from "./Components/SlidingArea/SlidingArea";
+import Footer from "./Components/Common/Footer";
+import MainWallpaper from "./assets/MainWallpaper.png";
+import ProfileCard from "./Components/UserProfile/ProfileCard";
+import Breadcrumb from "./Components/Breadcrumb/Breadcrumb"
+import Home from "./Components/hompage/Primary/Home";
+import { CartConterxtProvider } from "./Components/cartContext";
+import Checkout from "./Components/Checkout/Checkout";
 
 function App() {
   const [products, setProducts] = useState([
@@ -34,6 +46,9 @@ function App() {
   return (
     <>
       <Routes>
+      <Route path="/" element={<Login/>} />
+      
+      <Route path="/home" element={<Home/>} />
         <Route
           path="/cart"
           element={<Cart products={products} removeItem={removeItem} />}
@@ -44,9 +59,70 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/codeVer/:email" element={<VerificationCode />} />
         <Route path="/newPass" element={<NewPassword />} />
-       <Checkout path="/Checkout" element={<Checkout/>}/>
-        <Common path="/Footer" element={<Footer/>}/>
-        <Common path="/NavBar" element={<NavBar/>}/>
+       
+        <Route path="/about" element={<>
+    <NavBar/>
+          <AboutUsPage />
+          <Footer/>
+        </>} />
+
+        <Route path="/add-product" element={<>
+          <NavBar />
+          <AddProduct />
+          <Footer/>
+        </>} />
+        <Route path="/ProductPage" element={
+          <div>
+            <NavBar />
+            <ProductPage />
+           <ProductList/>
+            <SlidingArea />
+            <Footer />
+          </div>
+
+        } />
+
+<Route path="/user" element={
+<div>
+
+<Breadcrumb/>
+    <ProfileCard/>
+    
+   
+    <Footer/>
+</div>
+}/>
+<Route path="/Shop" element={
+<div>
+
+<CartConterxtProvider>
+        <NavBar />
+        <div className="MainWallpaper">
+          <img
+            alt="MainWallpaper"
+            src={MainWallpaper}
+            style={{ width: "100%", height: "100%", filter: "blur(6px)" }}
+          />
+        </div>
+
+        <Productlist2 />
+        <SlidingArea />
+        <Footer />
+
+
+      </CartConterxtProvider>
+      </div>
+}/>
+
+      <Route path="/Checkout" element={
+          <div>
+            <NavBar />
+           <Checkout/>
+            <Footer />
+          </div>
+      }/>
+   
+
       </Routes>
 
     </>
